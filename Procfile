@@ -1,1 +1,1 @@
-web: python djempty/manage.py
+web: python djempty/manage.py runserver
