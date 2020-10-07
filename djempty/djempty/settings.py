@@ -25,7 +25,7 @@ SECRET_KEY = 'w1y1g)@bdasel%s_pnp0lz8n$7(y=stpb&umy=cuixljdd1%(w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [os.getenv("APP_URL", "")]
 
 
 # Application definition
