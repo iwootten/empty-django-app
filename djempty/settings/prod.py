@@ -1,10 +1,10 @@
 from djempty.settings.base import *
 
-import environ
+from dotenv import load_dotenv
+import os
 
-env = environ.Env()
-environ.Env.read_env()
+load_dotenv()
 
-DEBUG = env.bool('DEBUG', default=False)
-SECRET_KEY = env('SECRET_KEY')
-ALLOWED_HOSTS = env.list('ALLOWED_HOSTS')
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+SECRET_KEY = os.getenv('SECRET_KEY')
+ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
